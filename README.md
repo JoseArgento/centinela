@@ -6,6 +6,8 @@ No acusa a nadie: informa. Muchos addons buenos reemplazan estas funciones para 
 
 [Read in English](README.en.md)
 
+![Centinela en el juego: las 38 funciones vigiladas, todas intactas](docs/libro.png)
+
 **Contenido**
 
 - [Cómo se usa](#cómo-se-usa)
@@ -54,13 +56,14 @@ Copiá la carpeta `Centinela` a `Interface\AddOns\`, dentro de la carpeta de For
 **Probado:**
 - ✅ Cada función que usa y cada una de las 38 que vigila existen en Forever 1.60.1: `tools/check_api.py` contra los dumps de [Ketho/BlizzardInterfaceResources](https://github.com/Ketho/BlizzardInterfaceResources) y la UI de [Gethe/wow-ui-source](https://github.com/Gethe/wow-ui-source), rama `forever`.
 - ✅ [forever-lint](https://github.com/JoseArgento/forever-lint) sin problemas; Addon Sentry: "Sin señales de riesgo".
-- ✅ **35 tests** en Lua 5.1 (el Lua de WoW): reemplazos con y sin nombre, funciones dentro de tablas, funciones que no existen, el aviso en el chat solo cuando hay algo nuevo, el aviso de oro arriba y abajo del tope, por correo y por comercio, contra reembolso (no cuenta), idioma, botón del minimapa.
+- ✅ **39 tests** en Lua 5.1 (el Lua de WoW): reemplazos con y sin nombre, funciones dentro de tablas, funciones que no existen, el aviso en el chat solo cuando hay algo nuevo, el aviso de oro arriba y abajo del tope, por correo y por comercio, contra reembolso (no cuenta), idioma, botón del minimapa.
 
-**Sin probar ⏳** (falta el cliente):
-- Que `issecurevariable` en Forever devuelva el nombre del addon como segundo valor (así es en retail) y que funcione con tablas (`issecurevariable(C_AuctionHouse, "PostItem")`).
+**En el cliente** (5/11): la revisión al entrar, la página con las 38 funciones y el botón del minimapa. Sin addons que reemplacen esas funciones, todas dieron "intacta".
+
+**Todavía sin ver ⏳:**
+- Que `issecurevariable` en Forever devuelva el nombre del addon como segundo valor cuando una función sí fue reemplazada (así es en retail), y que funcione con tablas (`issecurevariable(C_AuctionHouse, "PostItem")`).
 - Que el monto del correo se lea de `SendMailMoney` y el destinatario de `SendMailNameEditBox`, y el del comercio de `GetPlayerTradeMoney` y `TradeFrameRecipientNameText` (son los nombres de la UI de Forever, pero no los vi en el juego).
 - Que el popup no se cruce con la confirmación de transferencia segura que Forever ya pide para el correo con oro.
-- Cómo se ve la página y el botón del minimapa.
 
 ## Desarrollo
 

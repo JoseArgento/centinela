@@ -6,6 +6,8 @@ It accuses no one: it reports. Many good addons replace these functions to add f
 
 [Leer en castellano](README.md)
 
+![Centinela in the game: the 38 watched functions, all intact](docs/libro.png)
+
 ## How to use it
 
 Open it with `/centinela`, the **round minimap button** (right click: check now; drag it around the minimap, `/centinela minimap off` hides it), the key binding or the addon compartment. The window is a **parchment page** (the [Pergamino](https://github.com/JoseArgento/pergamino) skin shared by Bitácora and the other addons): when it last checked, how many functions it watches and how many are replaced; the list, each function with what it does and whether it is **intact** or **replaced by** an addon ("Only replaced" filters); "Check now"; and at the foot what a replacement means and the gold limit.
@@ -26,7 +28,7 @@ While the mail or trade window is open, Centinela reads the amount you typed. Ab
 
 ## Tested
 
-- ✅ Every function it uses and all 38 it watches exist in Forever 1.60.1 (`tools/check_api.py`); forever-lint clean; Addon Sentry "no risk signals"; **35 tests** in Lua 5.1.
-- ⏳ Not tried in the client: `issecurevariable`'s second return and its table form in Forever, the names of the mail and trade money boxes, how the popup sits next to Forever's own secure transfer confirmation, and how the page looks.
+- ✅ Every function it uses and all 38 it watches exist in Forever 1.60.1 (`tools/check_api.py`); forever-lint clean; Addon Sentry "no risk signals"; **39 tests** in Lua 5.1.
+- **In the client** (5 November): the check on login, the page with the 38 functions and the minimap button; with no addon replacing those functions, all came back "intact". ⏳ Not seen yet: `issecurevariable`'s second return when a function was replaced, and its table form in Forever; the names of the mail and trade money boxes; how the popup sits next to Forever's own secure transfer confirmation.
 
 Not affiliated with Blizzard Entertainment. MIT licence.
