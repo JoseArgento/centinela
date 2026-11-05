@@ -13,6 +13,7 @@ local handlers = {
 	TRADE_CLOSED = G.Stop,
 }
 
+local onSlash -- the /centinela handler, defined below; guarded once the saved variables are in
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_LOGIN")
@@ -21,6 +22,8 @@ frame:SetScript("OnEvent", function(_, event, ...)
 		if ... == ADDON then
 			ns.InitDB()
 			frame:UnregisterEvent("ADDON_LOADED")
+			-- from here on a Lua error in a handler is kept, not thrown (see /centinela errores)
+			SlashCmdList.CENTINELA = ns.guard.Install(frame, onSlash)
 		end
 	elseif event == "PLAYER_LOGIN" then
 		G.HookSends()
@@ -40,7 +43,7 @@ frame:SetScript("OnEvent", function(_, event, ...)
 end)
 
 SLASH_CENTINELA1 = "/centinela"
-SlashCmdList.CENTINELA = function(msg)
+onSlash = function(msg)
 	msg = strtrim((msg or ""):lower())
 	if msg == "revisar" or msg == "check" then
 		ns.UI.CheckNow()
@@ -73,12 +76,15 @@ SlashCmdList.CENTINELA = function(msg)
 		else
 			ns.Print(L.LANG_USAGE)
 		end
+	elseif msg == "errores" or msg == "errors" then
+		ns.UI.Errors()
 	elseif msg == "help" or msg == "ayuda" then
 		ns.Print(L.HELP)
 	else
 		ns.UI.Toggle()
 	end
 end
+SlashCmdList.CENTINELA = onSlash
 
 function Centinela_OnAddonCompartmentClick()
 	ns.UI.Toggle()

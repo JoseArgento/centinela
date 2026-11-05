@@ -408,3 +408,24 @@ def test_rows_are_one_line_and_the_green_is_dark_ink():
     assert got == "LEFT|LEFT:true:RIGHT|true||cff2f5222intact|r"
     g.slash("")
     assert g.run("return ns.UI.frame.list.rowHeight") == 26
+
+
+def test_a_handler_error_is_kept_and_shown_not_thrown():
+    c = Client()
+    c.login()
+    # a broken handler in the event frame: the guard keeps the error instead of a popup
+    # handlers hold G.Start by value, so break what it calls (the ticker it creates)
+    c.run("C_Timer.NewTicker = function() error('se rompio el correo') end")
+    c.fire("MAIL_SHOW")  # does not raise
+    errs = c.run("return ns.db.errors")
+    assert len(errs) == 1 and "se rompio el correo" in errs[1].message and errs[1].label == "MAIL_SHOW"
+    assert any("tuvo un error" in line or "had an error" in line for line in c.m.chat.values())
+    c.fire("TRADE_SHOW")
+    assert c.run("return #ns.db.errors") == 2  # another label, another entry
+    assert sum(1 for line in c.m.chat.values() if "error" in line) == 1  # said once per session
+    # /centinela errores opens the card with the text to copy; Clear empties it
+    c.slash("errores")
+    assert c.run("return ns.UI.errorsCard:IsShown()") is True
+    assert "se rompio el correo" in c.run("return ns.UI.errorsCard.page.area.box._text")
+    c.run("ns.UI.errorsCard.page.clear:GetScript('OnClick')()")
+    assert c.run("return #ns.db.errors") == 0

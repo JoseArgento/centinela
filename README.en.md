@@ -26,6 +26,8 @@ It checks 5 seconds after login (so addons that load late count) and every 10 mi
 
 While the mail or trade window is open, Centinela reads the amount you typed. Above the limit, once per amount: "you are about to send 120 gold to Ana. Sure?". **No** clears the amount; **Yes** does nothing else. It is a **warning, not a lock**: it replaces no game function, and a money mail an addon sends without the window is noted in the chat afterwards.
 
+**If something breaks:** `/centinela errores` shows the addon's last error (the last 10 are kept, no popups) to copy into a GitHub issue.
+
 ## Tested
 
 - ✅ Every function it uses and all 38 it watches exist in Forever 1.60.1 (`tools/check_api.py`); forever-lint clean; Addon Sentry "no risk signals"; **39 tests** in Lua 5.1.

@@ -65,6 +65,8 @@ Copiá la carpeta `Centinela` a `Interface\AddOns\`, dentro de la carpeta de For
 - Que el monto del correo se lea de `SendMailMoney` y el destinatario de `SendMailNameEditBox`, y el del comercio de `GetPlayerTradeMoney` y `TradeFrameRecipientNameText` (son los nombres de la UI de Forever, pero no los vi en el juego).
 - Que el popup no se cruce con la confirmación de transferencia segura que Forever ya pide para el correo con oro.
 
+**Si algo falla:** `/centinela errores` muestra el último error del addon (se guardan los últimos 10, sin popups) para copiarlo en un issue de GitHub.
+
 ## Desarrollo
 
 ```bash
