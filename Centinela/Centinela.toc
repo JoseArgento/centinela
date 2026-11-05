@@ -1,0 +1,21 @@
+## Interface: 16001
+## Title: Centinela
+## Notes: Tells you which addon replaced the game's mail, trade, vendor, bank and auction functions, and asks before a large gold transfer leaves. It reports; it never accuses.
+## Notes-esES: Te dice qué addon reemplazó las funciones de correo, comercio, vendedor, banco y subasta del juego, y pregunta antes de que salga mucho oro. Informa; nunca acusa.
+## Notes-esMX: Te dice qué addon reemplazó las funciones de correo, comercio, vendedor, banco y subasta del juego, y pregunta antes de que salga mucho oro. Informa; nunca acusa.
+## Author: José Argento
+## Version: @project-version@
+## SavedVariables: CentinelaDB
+## IconTexture: Interface\AddOns\Centinela\Media\icon
+## AddonCompartmentFunc: Centinela_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: Centinela_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: Centinela_OnAddonCompartmentLeave
+## Category: Other
+
+Libs\Pergamino\Pergamino.lua
+Locales.lua
+Core.lua
+Watch.lua
+Gold.lua
+UI.lua
+Events.lua
