@@ -395,3 +395,16 @@ def test_help_and_compartment():
     assert c.ns.UI.frame.IsShown(c.ns.UI.frame)
     c.lua.globals().Centinela_Toggle()
     assert not c.ns.UI.frame.IsShown(c.ns.UI.frame)
+
+
+def test_rows_are_one_line_and_the_green_is_dark_ink():
+    # in the game the two-line rows ran into each other ("Mail" over the next name)
+    g = Client().login()
+    got = g.run(
+        "local row = CreateFrame('Button'); ns.UI.InitRow(row, { name = 'SendMail', group = 'Mail', status = 'intact', text = 'intact' });"
+        " local n, gr, st = row.name._points[1], row.group._points[1], row.status._points[2];"
+        " return n[1] .. '|' .. gr[1] .. ':' .. tostring(gr[2] == row.name) .. ':' .. gr[3] .. '|' .. tostring(st[2] == row.group) .. '|' .. row.status._text"
+    )
+    assert got == "LEFT|LEFT:true:RIGHT|true||cff2f5222intact|r"
+    g.slash("")
+    assert g.run("return ns.UI.frame.list.rowHeight") == 26

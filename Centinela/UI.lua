@@ -9,8 +9,10 @@ local W = ns.Watch
 local UI = {}
 ns.UI = UI
 local P = Pergamino
-local GREEN, RED = "|cff1d6e10", "|cff8f2a1d"
-local ROW_H = 30
+-- a dark ink green: the bright one read as a highlighter on parchment
+local GREEN, RED = "|cff2f5222", "|cff8f2a1d"
+-- one line per function (two lines did not fit in 30 px and the second ran into the next row)
+local ROW_H = 26
 
 UI.onlyReplaced = false
 
@@ -46,20 +48,24 @@ end
 local function initRow(row, item)
 	if not row.name then
 		row.name = P.Label(row, "", "strong")
-		row.name:SetPoint("TOPLEFT", 6, -3)
-		row.name:SetWidth(250)
+		row.name:SetPoint("LEFT", 6, 0)
+		row.name:SetWidth(220)
 		row.name:SetWordWrap(false)
-		row.group = P.Label(row, "", "small")
-		row.group:SetPoint("BOTTOMLEFT", 6, 3)
+		row.group = P.Label(row, "", "muted")
+		row.group:SetPoint("LEFT", row.name, "RIGHT", 6, 0)
+		row.group:SetWidth(70)
+		row.group:SetWordWrap(false)
 		row.status = P.Label(row, "", "small", "RIGHT")
 		row.status:SetPoint("RIGHT", -6, 0)
-		row.status:SetPoint("LEFT", row.name, "RIGHT", 6, 0)
+		row.status:SetPoint("LEFT", row.group, "RIGHT", 6, 0)
 		row.status:SetWordWrap(false)
 	end
 	row.name:SetText(item.name)
 	row.group:SetText(item.group)
 	row.status:SetText((item.status == "replaced" and RED or GREEN) .. item.text .. "|r")
 end
+
+UI.InitRow = initRow -- for the tests
 
 local function build()
 	local f = P.Book(ADDON .. "Frame", { title = L.TITLE, single = true, width = 520, height = 580 })
