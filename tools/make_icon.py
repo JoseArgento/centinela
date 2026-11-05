@@ -52,7 +52,7 @@ def main() -> None:
     small = out.resize((64, 64), Image.LANCZOS)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     small.save(OUT, format="TGA", orientation=-1)
-    small.save(OUT.with_suffix(".png"))
+    small.save(ROOT / "docs" / "icon.png")  # a look at it outside the game; not shipped
     print(OUT, small.size)
 
 
