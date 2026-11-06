@@ -5,6 +5,7 @@
 ## Notes-esMX: Te dice qué addon reemplazó las funciones de correo, comercio, vendedor, banco y subasta del juego, y pregunta antes de que salga mucho oro. Informa; nunca acusa.
 ## Author: José Argento
 ## Version: @project-version@
+## X-Curse-Project-ID: 1787086
 ## SavedVariables: CentinelaDB
 ## IconTexture: Interface\AddOns\Centinela\Media\icon
 ## AddonCompartmentFunc: Centinela_OnAddonCompartmentClick
