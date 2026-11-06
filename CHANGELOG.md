@@ -2,6 +2,7 @@
 
 ## 0.1.1 (sin publicar)
 
+- **Botón de minimapa como los del juego** (Pergamino 7): aro dorado biselado, disco oscuro, sombra, ícono crema; `/centinela minimapa juntar on|off` junta todos los addons de la familia en un solo botón con menú. Los errores del botón del minimapa y del compartimento también quedan guardados (`/centinela errores`).
 - **Errores propios guardados** (Pergamino 5): un error de Lua en un handler ya no llega al jugador como popup; queda en `CentinelaDB.errors` (los últimos 10), se avisa una vez en el chat y `/centinela errores` abre una tarjeta para copiarlo en un issue de GitHub.
 
 ## 0.1.0

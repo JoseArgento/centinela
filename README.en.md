@@ -16,7 +16,7 @@ It checks 5 seconds after login (so addons that load late count) and every 10 mi
 
 - `/centinela` opens the page, `/centinela check` checks now.
 - `/centinela limit 100` warns from 100 gold; `/centinela limit 0` turns the warning off. Default 50.
-- `/centinela minimap on|off`, `/centinela idioma es|en|auto`.
+- `/centinela minimap on|off` (`minimap merge on|off`: one button for the whole family of addons), `/centinela idioma es|en|auto`.
 
 ## What it watches
 
@@ -30,7 +30,7 @@ While the mail or trade window is open, Centinela reads the amount you typed. Ab
 
 ## Tested
 
-- ✅ Every function it uses and all 38 it watches exist in Forever 1.60.1 (`tools/check_api.py`); forever-lint clean; Addon Sentry "no risk signals"; **39 tests** in Lua 5.1.
+- ✅ Every function it uses and all 38 it watches exist in Forever 1.60.1 (`tools/check_api.py`); forever-lint clean; Addon Sentry "no risk signals"; **42 tests** in Lua 5.1.
 - **In the client** (5 November): the check on login, the page with the 38 functions and the minimap button; with no addon replacing those functions, all came back "intact". ⏳ Not seen yet: `issecurevariable`'s second return when a function was replaced, and its table form in Forever; the names of the mail and trade money boxes; how the popup sits next to Forever's own secure transfer confirmation.
 
 Not affiliated with Blizzard Entertainment. MIT licence.

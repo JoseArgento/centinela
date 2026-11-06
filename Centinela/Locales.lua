@@ -29,7 +29,7 @@ local L = {
 	LIMIT_SET = "Gold warning above %d gold.",
 	LIMIT_OFF = "Gold warning off.",
 	LIMIT_USAGE = "/centinela limit N (gold; 0 turns it off).",
-	HELP = "/centinela opens the page. /centinela check runs the check now, /centinela limit N sets the gold warning, /centinela idioma es|en|auto picks the language, /centinela errores shows the addon's own errors to copy.",
+	HELP = "/centinela opens the page. /centinela check runs the check now, /centinela limit N sets the gold warning, /centinela minimapa on|off shows or hides the minimap button (juntar on|off: one button for the whole family), /centinela idioma es|en|auto picks the language, /centinela errores shows the addon's own errors to copy.",
 	ERR_TITLE = "Errors",
 	ERR_NOTICE = "had an error. /centinela errores shows it to copy.",
 	ERR_EMPTY = "No errors kept.",
@@ -50,6 +50,8 @@ local L = {
 	G_SETTINGS = "Settings",
 	G_UI = "Confirmation popups",
 	MINIMAP_TIP = "Left click: the page. Right click: check now.",
+	MINIMAP_MERGED_ON = "One minimap button for the whole family (/centinela minimapa juntar off splits them again).",
+	MINIMAP_MERGED_OFF = "Each addon has its own minimap button again.",
 }
 
 local es = {
@@ -79,7 +81,7 @@ local es = {
 	LIMIT_SET = "Aviso de oro a partir de %d de oro.",
 	LIMIT_OFF = "Aviso de oro apagado.",
 	LIMIT_USAGE = "/centinela tope N (en oro; 0 lo apaga).",
-	HELP = "/centinela abre la página. /centinela revisar revisa ahora, /centinela tope N fija el aviso de oro, /centinela idioma es|en|auto elige el idioma, /centinela errores muestra los errores del addon para copiarlos.",
+	HELP = "/centinela abre la página. /centinela revisar revisa ahora, /centinela tope N fija el aviso de oro, /centinela minimapa on|off muestra o esconde el botón del minimapa (juntar on|off: un solo botón para toda la familia), /centinela idioma es|en|auto elige el idioma, /centinela errores muestra los errores del addon para copiarlos.",
 	ERR_TITLE = "Errores",
 	ERR_NOTICE = "tuvo un error. /centinela errores lo muestra para copiarlo.",
 	ERR_EMPTY = "Sin errores guardados.",
@@ -100,6 +102,8 @@ local es = {
 	G_SETTINGS = "Ajustes",
 	G_UI = "Confirmaciones",
 	MINIMAP_TIP = "Clic izquierdo: la página. Clic derecho: revisar ahora.",
+	MINIMAP_MERGED_ON = "Un solo botón de minimapa para toda la familia (/centinela minimapa juntar off los separa).",
+	MINIMAP_MERGED_OFF = "Cada addon vuelve a tener su botón de minimapa.",
 }
 
 -- ns.L is a proxy: the files keep `local L = ns.L` and read through it, so the language can change after

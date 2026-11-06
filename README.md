@@ -30,7 +30,7 @@ Revisa sola a los 5 segundos de entrar (así cuenta a los addons que cargan tard
 
 - `/centinela` abre la página, `/centinela revisar` revisa ahora.
 - `/centinela tope 100` avisa a partir de 100 de oro; `/centinela tope 0` apaga el aviso. Por defecto, 50.
-- `/centinela minimapa on|off` muestra o esconde el botón del minimapa.
+- `/centinela minimapa on|off` muestra o esconde el botón del minimapa; `/centinela minimapa juntar on|off` junta los botones de toda la familia de addons en uno solo con menú.
 - `/centinela idioma es|en|auto`: castellano, inglés o el del cliente (para los que juegan con el cliente en inglés).
 
 ## Qué mira
@@ -56,7 +56,7 @@ Copiá la carpeta `Centinela` a `Interface\AddOns\`, dentro de la carpeta de For
 **Probado:**
 - ✅ Cada función que usa y cada una de las 38 que vigila existen en Forever 1.60.1: `tools/check_api.py` contra los dumps de [Ketho/BlizzardInterfaceResources](https://github.com/Ketho/BlizzardInterfaceResources) y la UI de [Gethe/wow-ui-source](https://github.com/Gethe/wow-ui-source), rama `forever`.
 - ✅ [forever-lint](https://github.com/JoseArgento/forever-lint) sin problemas; Addon Sentry: "Sin señales de riesgo".
-- ✅ **39 tests** en Lua 5.1 (el Lua de WoW): reemplazos con y sin nombre, funciones dentro de tablas, funciones que no existen, el aviso en el chat solo cuando hay algo nuevo, el aviso de oro arriba y abajo del tope, por correo y por comercio, contra reembolso (no cuenta), idioma, botón del minimapa.
+- ✅ **42 tests** en Lua 5.1 (el Lua de WoW): reemplazos con y sin nombre, funciones dentro de tablas, funciones que no existen, el aviso en el chat solo cuando hay algo nuevo, el aviso de oro arriba y abajo del tope, por correo y por comercio, contra reembolso (no cuenta), idioma, botón del minimapa.
 
 **En el cliente** (5/11): la revisión al entrar, la página con las 38 funciones y el botón del minimapa. Sin addons que reemplacen esas funciones, todas dieron "intacta".
 

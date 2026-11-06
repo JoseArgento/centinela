@@ -429,3 +429,25 @@ def test_a_handler_error_is_kept_and_shown_not_thrown():
     assert "se rompio el correo" in c.run("return ns.UI.errorsCard.page.area.box._text")
     c.run("ns.UI.errorsCard.page.clear:GetScript('OnClick')()")
     assert c.run("return #ns.db.errors") == 0
+
+
+def test_merging_the_minimap_buttons_hides_ours_and_the_hub_lists_it():
+    c = Client().login()
+    b = c.ns.UI.minimap
+    entries = c.run("return Pergamino.MinimapHub.Entries()")
+    assert [e.label for e in entries.values()] == ["Centinela"]
+    c.slash("minimapa juntar on")
+    assert c.ns.db.settings.minimapMerged is True and c.run("return Pergamino.MinimapHub.IsMerged()") is True
+    assert not b.IsShown(b)
+    assert c.lua.globals().PergaminoMinimapHub.IsShown(c.lua.globals().PergaminoMinimapHub)
+    c.slash("minimap merge off")
+    assert b.IsShown(b) and c.ns.db.settings.minimapMerged is False
+
+
+def test_an_error_in_the_minimap_click_or_the_compartment_is_kept():
+    c = Client().login()
+    c.run("ns.UI.Toggle = function() error('se rompio la pagina') end")
+    c.run("ns.UI.minimap:GetScript('OnClick')(ns.UI.minimap, 'LeftButton')")
+    c.run("Centinela_OnAddonCompartmentClick()")
+    errs = c.run("return ns.guard.Errors()")
+    assert sorted(e.label for e in errs.values()) == ["compartment", "minimap"]
