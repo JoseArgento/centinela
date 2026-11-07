@@ -8,6 +8,8 @@ No acusa a nadie: informa. Muchos addons buenos reemplazan estas funciones para 
 
 ![Centinela en el juego: las 38 funciones vigiladas, todas intactas](docs/libro.png)
 
+**Descargar:** en [CurseForge](https://www.curseforge.com/wow/addons/centinela) (también con la app de CurseForge o WowUp) o el zip de las [releases](https://github.com/JoseArgento/centinela/releases).
+
 **Contenido**
 
 - [Cómo se usa](#cómo-se-usa)

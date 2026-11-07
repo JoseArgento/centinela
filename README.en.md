@@ -8,6 +8,8 @@ It accuses no one: it reports. Many good addons replace these functions to add f
 
 ![Centinela in the game: the 38 watched functions, all intact](docs/libro.png)
 
+**Download:** on [CurseForge](https://www.curseforge.com/wow/addons/centinela) (also through the CurseForge app or WowUp) or the zip from the [releases](https://github.com/JoseArgento/centinela/releases).
+
 ## How to use it
 
 Open it with `/centinela`, the **round minimap button** (right click: check now; drag it around the minimap, `/centinela minimap off` hides it), the key binding or the addon compartment. The window is a **parchment page** (the [Pergamino](https://github.com/JoseArgento/pergamino) skin shared by Bitácora and the other addons): when it last checked, how many functions it watches and how many are replaced; the list, each function with what it does and whether it is **intact** or **replaced by** an addon ("Only replaced" filters); "Check now"; and at the foot what a replacement means and the gold limit.
