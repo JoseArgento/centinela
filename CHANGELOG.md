@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 (sin publicar)
+
+- **El botón ya no queda afuera del botón único de la familia** (Pergamino 8). Con "un solo botón para la familia" elegido en otro addon, uno que mostraba su botón después quedaba afuera (pasó con Taller). La elección ahora se guarda en todos los addons de la familia, así se mantiene con cualquiera que tengas activado (`/centinela minimapa juntar on|off` desde cualquiera), y el botón único recuerda adónde lo arrastraste.
+
 ## 0.2.0 (2026-11-07)
 
 - **Botón de minimapa como los del juego** (Pergamino 7): aro dorado biselado, disco oscuro, sombra, ícono crema; `/centinela minimapa juntar on|off` junta todos los addons de la familia en un solo botón con menú. Los errores del botón del minimapa y del compartimento también quedan guardados (`/centinela errores`).
